@@ -1,3 +1,16 @@
+# Para hacer funcionar esta pagina tienes que descargar lo siguiente
+# Dentro de fronted (cd ./frontend)
+### `npm install react-bootstrap bootstrap`
+### `npm install react-router-dom`
+### `npm i`
+
+
+
+# Dentro del backend (cd ./backend)
+### `npm install express mongoose`
+### `npm install --save-dev nodemon`
+### `npm i`
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
