@@ -4,6 +4,7 @@ import { datesmodels } from "./datesmodels.js";
 import database from "mime-db";
 import "bootstrap/dist/css/bootstrap.min.css"
 import { createBrowserRouter,RouterProvider} from "react-router-dom";
+import cors from cors
 
 const route = createBrowserRouter({
   path:"/",
@@ -32,8 +33,9 @@ app.get("/", (req, res) => {
 // Ruta para crear un documento en la base de datos
 app.post("/save-answers", async (req, res) => {
   console.log(req.body)
-  //Arreglo del 1 al 20
-  const numberOfQuestions = Array.from((Array(20).keys))
+  //Arreglo del 1 al 12
+  const numberOfQuestions = Array.from((Array(12).keys))
+  let flag = true;
   for (nQ of numberOfQuestion){
     if(!req.body[`pregunta_${nQ}`]){
       flag = false;

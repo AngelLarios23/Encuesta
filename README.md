@@ -1,16 +1,17 @@
 # Para hacer funcionar esta pagina tienes que descargar lo siguiente
 # Dentro de fronted (cd ./frontend)
+### `npm i`
+### `npm install sweetalert2`
 ### `npm install react-bootstrap bootstrap`
 ### `npm install react-router-dom`
-### `npm i`
 ### `npm install chart.js react-chartjs-2`
-
-
-
+### `npm install axios`
+### `npm install cors`
 
 # Dentro del backend (cd ./backend)
 ### `npm install express mongoose`
 ### `npm install --save-dev nodemon`
+### `npm install cors`
 ### `npm i`
 
 # Getting Started with Create React App
