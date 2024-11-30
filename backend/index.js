@@ -23,43 +23,6 @@ mongoose.connect("mongodb://localhost:27017/questionnairesFusion", {
   app.get("/",(req, res)=> {
     res.send("Hola desde mi servidor!")
   });
-//app.post
-  app.post("/create", async (req, res) => {
-    // Primero, extraemos los datos enviados en la solicitud
-    const { respuesta1, respuesta2, respuesta3, respuesta4, respuesta5, respuesta6 } = req.body;
-  
-    // Validación: asegurarse de que todos los campos necesarios están presentes
-    if (!respuesta1 || !respuesta2 || !respuesta3 || !respuesta4 || !respuesta5 || !respuesta6) {
-      return res.status(400).json({
-        msg: "Faltan respuestas, por favor completa todos los campos.",
-      });
-    }
-  
-    try {
-      // Creamos un nuevo documento con los datos proporcionados
-      const newAnswer = new datesmodels({
-        respuesta1,
-        respuesta2,
-        respuesta3,
-        respuesta4,
-        respuesta5,
-        respuesta6,
-      });
-  
-      // Guardamos el nuevo documento en la base de datos
-      await newAnswer.save();
-  
-      // Respuesta exitosa
-      return res.status(200).json({
-        msg: "Respuestas almacenadas con éxito.",
-      });
-    } catch (error) {
-      console.error("Error al guardar los datos:", error);
-      return res.status(500).json({
-        msg: "Hubo un problema al guardar los datos. Intenta más tarde.",
-      });
-    }
-  });
 
 //app.get
 app.get("/get-date", async (req, res) => {

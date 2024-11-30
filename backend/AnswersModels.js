@@ -1,51 +1,51 @@
 import { Schema, model } from "mongoose";
 
 const AnswerSchema = new Schema({
-    respuesta0: {
+    respuesta_0: {
         type: String,
         required: true
     },
-    respuesta1: {
+    respuesta_1: {
         type: String,
         required: true
     },
-    respuesta2: {
+    respuesta_2: {
         type: String,
         required: true
     },
-    respuesta3: {
+    respuesta_3: {
         type: String,
         required: true
     },
-    respuesta4: {
+    respuesta_4: {
         type: String,
         required: true
     },
-    respuesta5: {
+    respuesta_5: {
         type: String,
         required: true
     },
-    respuesta6: {
+    respuesta_6: {
         type: String,
         required: true
     },
-    respuesta7: {
+    respuesta_7: {
         type: String,
         required: true
     },
-    respuesta8: {
+    respuesta_8: {
         type: String,
         required: true
     },
-    respuesta9: {
+    respuesta_9: {
         type: String,
         required: true
     },
-    respuesta10: {
+    respuesta_10: {
         type: String,
         required: true
     },
-    respuesta11: {
+    respuesta_11: {
         type: String,
         required: true
     }
