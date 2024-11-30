@@ -3,6 +3,8 @@
 ### `npm install react-bootstrap bootstrap`
 ### `npm install react-router-dom`
 ### `npm i`
+### `npm install chart.js react-chartjs-2`
+
 
 
 
