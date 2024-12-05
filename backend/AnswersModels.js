@@ -51,4 +51,4 @@ const AnswerSchema = new Schema({
     }
 });
 
-export const AnswerModels = model("answers", AnswerSchema);
+export const AnswerModel = model("answers", AnswerSchema);

@@ -1,60 +1,52 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
-import { Card, Container } from 'react-bootstrap';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-export const data = {
-  labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-  datasets: [
+export function Chart() {
+  const [numberAnswers, setNumberAnswers] = useState([0, 0, 0, 0]); // Valores iniciales
 
+  useEffect(() => {
+    getData();
+  }, []);
 
-    const getData = async ()=>{
-        try {
-            Swal.fire("Carga datos")
-            Swal.showLoading()
-            const {data} = await.get("http://localhost:4000/get-answers-to-chart");//Se esta destructurando 
-            setNumberAnswers(data);
-            Swal.close()
-        } catch (error)  { 
-            Swal.fire("Opss algo salio mal", error.msg, "error")
-
-        }
+  const getData = async () => {
+    try {
+      Swal.fire("Cargando datos");
+      Swal.showLoading();
+      const { data } = await axios.get("http://localhost:4000/get-answers-to-chart");
+      setNumberAnswers(data); 
+      Swal.close();
+    } catch (error) {
+      Swal.fire("Ocurrió un error", error.message || "Error desconocido", "error");
     }
-    {
-      label: '# of Votes',
-      data: [12, 19, 3, 5, 2, 3],
-      backgroundColor: [
-        'rgba(255, 99, 132, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-        'rgba(255, 206, 86, 0.2)',
-        'rgba(75, 192, 192, 0.2)',
-        'rgba(153, 102, 255, 0.2)',
-        'rgba(255, 159, 64, 0.2)',
-      ],
-      borderColor: [
-        'rgba(255, 99, 132, 1)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)',
-        'rgba(75, 192, 192, 1)',
-        'rgba(153, 102, 255, 1)',
-        'rgba(255, 159, 64, 1)',
-      ],
-      borderWidth: 1,
-    },
-  ],
-};
+  };
 
-export function App() {
-  return 
-  <Container>
-    <Card>
-        <Card.Body >
-            <div style={{width: "300px", height: "300px", margin: "auto"}}>
-                <Doughnut data={}/>
-            </div>
-        </Card.Body>
-    </Card>
-  </Container>
+  const data = {
+    labels: ["Excelente", "Bueno", "Neutro", "Malo"],
+    datasets: [
+      {
+        label: '# de respuestas',
+        data: numberAnswers, 
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+        ],
+        borderWidth: 2,
+      },
+    ],
+  };
+
+  return <Doughnut data={data} />;
 }
