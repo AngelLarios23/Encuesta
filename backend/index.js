@@ -27,10 +27,8 @@ mongoose.connect("mongodb://localhost:27017/questionnairesFusion", {
 //app.get
 app.get("/get-date", async (req, res) => {
   try {
-    // Recuperar todas las respuestas de la base de datos
     const allAnswers = await datesmodels.find();
 
-    // Si no hay respuestas, responder con un mensaje apropiado
     if (allAnswers.length === 0) {
       return res.status(404).json({ msg: "No hay respuestas almacenadas" });
     }

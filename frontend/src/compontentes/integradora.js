@@ -1,4 +1,4 @@
-import "../Estilos/integradora.css"; // Importa los estilos correctamente
+import "../Estilos/integradora.css"; 
 import { Card, Container, Form, Row, Col, Button } from 'react-bootstrap';
 import { useState } from 'react';
 import axios from "axios";
@@ -70,13 +70,13 @@ function Integradora() {
   };
 
   return (
-    <Container className="mt-3">
+    <Container>
       <Card>
         <Card.Body>
           <Card.Title>Encuesta servicios escolares</Card.Title>
           <Form>
             {questionnaire.preguntas.map((pregunta, i) => (
-              <Form.Group key={`pregunta_${i}`} className="mb-3">
+              <Form.Group key={`pregunta_${i}`}>
                 <Form.Label>{`${i + 1}. ${pregunta}`}</Form.Label>
                 {questionnaire.opciones.map((opcion, io) => (
                   <Form.Check
@@ -91,7 +91,7 @@ function Integradora() {
                 ))}
               </Form.Group>
             ))}
-            <Row className="text-center mt-4">
+            <Row>
               <Col>
                 <Button onClick={handleSubmit} disabled={isDisabled} variant="primary">
                   Enviar
