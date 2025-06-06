@@ -42,14 +42,42 @@ Sigue estos pasos para ejecutar el proyecto en tu máquina local:
 
 ---
 
-### 1️⃣ Clona el repositorio
+### 2️⃣ Instala las dependencias del frontend
+bash
+Copiar
+Editar
+cd frontend
+npm install
+npm install sweetalert2
+npm install react-bootstrap bootstrap
+npm install react-router-dom
+npm install chart.js react-chartjs-2
+npm install axios
+npm install cors
 
-```bash
-git clone https://github.com/tuusuario/encuestas.git
-cd encuestas
+### 3️⃣ Instala las dependencias del backend
+bash
+Copiar
+Editar
+cd ../backend
+npm install express mongoose
+npm install --save-dev nodemon
+npm install cors
+npm i
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### 4️⃣ Inicia la aplicación
+🖥️ Backend
+bash
+Copiar
+Editar
+cd backend
+npx nodemon index.js
 
-### `npm run build` fails to minify
+### 🌐 Frontend
+En otra terminal:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+bash
+Copiar
+Editar
+cd frontend
+npm start
